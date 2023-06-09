@@ -254,6 +254,7 @@
         }
       },
       modelValue (value) {
+        console.log('watch value', value)
         if (value) {
           this.buildComponent()
           this.initPositionView()
@@ -412,6 +413,7 @@
         const minute = this.minute ? (this.minute < 10 ? '0' : '') + this.minute : '00'
         const time = `${hour}:${minute}`
         this.$emit('update:model-value', time)
+        console.log('emitting', time)
       }
     }
   }
